@@ -1,8 +1,5 @@
-sudo apt-add-repository -r ppa:certbot/certbot
+sudo apt install certbot python3-certbot-nginx
 
-sudo apt update
-sudo apt-get update
+sudo certbot --nginx --agree-tos --redirect --hsts --staple-ocsp --email you@example.com -d yourdomain.com,www.yourdomain.com
 
-sudo apt install python3-certbot-nginx
-
-sudo certbot --nginx -d example.com -d www.example.com
+sudo certbot renew --dry-run
